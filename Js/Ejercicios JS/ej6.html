@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Erik Aguirre" />
+		<meta name="description" content="código curso IFCD0110" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 6</title>
+	</head>
+	<script>
+		// function cosa(p_texto) {
+		// 	let numero = prompt("Introduce un número");
+		// 	console.log(!isNaN(numero));
+		// 	if (
+		// 		numero != "" &&
+		// 		!isNaN(numero) &&
+		// 		(numero <= 0 || numero >= 99999999)
+		// 	) {
+		// 		// document.write(numero + " es un número comprendido entre 0 y 99999999");
+		// 		//p_texto.innerHTML += /*+= añade*/ "<br />" + numero;
+		// 	} else {
+		// 		// document.write(
+		// 		// 	numero + " no es un número comprendido entre 0 y 99999999"
+		// 		// );
+		// 	}
+		// }
+	</script>
+	<body>
+		<p id="texto"></p>
+		<button
+			onclick="document.getElementById('texto').innerHTML+=pedirNumero(prompt('add number'))"
+		>
+			Pedir Número
+		</button>
+		<script>
+			// for (let $i = 0; $i < numero.length; $i++) {
+			// 	const element = numero[$i];
+			// }
+
+			// function pedirNumero(p_texto) {
+			// 	if (test(numero) != false) {
+			// 		p_texto.innerHTML += "<br />" + numero;
+			// 	} else {
+			// 		p_texto.innerHTML += "<br /> no es un número valido";
+			// 	}
+			// }
+			/** pedirNumero()
+			 * @$numero: recibe el valor de la variable de dentro de la función.
+			 *
+			 * return: devuelve el número solo si es mayor a 99999999 o menor a 0
+			 * return: indica error
+			 **/
+			function pedirNumero($numero) {
+				if (
+					$numero != "" &&
+					!isNaN($numero) &&
+					($numero < 0 || $numero > 99999999)
+				) {
+					return $numero + " Es mayor que 99999999 o menor a 0 <br />";
+				} else {
+					return " Error <br />";
+				}
+			}
+
+			console.assert(pedirNumero("") == " Error <br />", "");
+			console.assert(pedirNumero("a") == " Error <br />", "");
+			console.assert(
+				pedirNumero(-1) == -1 + " Es mayor que 99999999 o menor a 0 <br />",
+				""
+			);
+			console.assert(pedirNumero(0) == " Error <br />", "");
+			console.assert(pedirNumero(99999998) == " Error <br />", "");
+			console.assert(pedirNumero(99999999) == " Error <br />", "");
+			console.assert(
+				pedirNumero(100000000) ==
+					100000000 + " Es mayor que 99999999 o menor a 0 <br />",
+				""
+			);
+		</script>
+	</body>
+</html>

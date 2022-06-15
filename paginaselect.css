@@ -1,0 +1,81 @@
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+      /*overflow: hidden; esto es para hacer un excedente de lo que se añada*/
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover { /* filtra todas las "a" que tengan el subselector "hover"  */
+      background: #ddd;
+      color: black;
+    }
+
+    .navbar a.active { /* filtra todas las "a" con el class "active" */
+      background-color: #22bdb5;
+      color: white;
+    }
+
+    .navbar-right {
+      float: right;
+    }
+    .main {
+      padding: 16px;
+      margin-top: 30px;
+    }
+
+    .dropdown {
+      float: left;
+      /*overflow: hidden;*/
+    }
+    .dropdown .dropbtn {
+      font-size: 16px; /* tamaño de la letra */ 
+      border: none;
+      outline: none; 
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit; /* inherit es heredar de lo que tiene detrás */
+      font-family: inherit;
+      margin: 0;
+    }
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* caja */
+      z-index: 1;
+    }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }

@@ -1,0 +1,25 @@
+#contenedor{
+    width:100%;
+     
+}
+h2:first-letter{
+    font-size: 2rem;
+    
+}
+#menu #lista1 li a::before{
+    content:"\2192";
+}
+a:before{
+    color:blue;
+    content:"\2192"; /* buscar conversor de html a css y poner el codigo*/ 
+}
+abbr::after{
+    content:"("attr(title)")"; /*es la manera de acceder dentro de un atributo*/
+}
+abbr{
+    font-style: italic;
+    text-decoration: none;/* con esto le quito la linea de puntons de debajo del HTML*/
+}
+/*h2 + p{
+    text-indent:2em;
+} desplaza el texto a un lado h2 + p significa que después de un h2 si hay una etiqueta p se aplicara, de lo contrario no*/ 

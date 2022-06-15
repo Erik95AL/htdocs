@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Do While</title>
+	</head>
+	<body>
+		<script>
+			let number;
+			do {
+				do {
+					number = prompt("Dame un número!");
+				} while (inNaN(number));
+			} while (confirm("Estas seguro?") == true);
+			console.log(number);
+		</script>
+	</body>
+</html -->
+<html>
+	<head> </head>
+	<body>
+		<script>
+			let vueltas;
+			do {
+				vueltas = prompt("Cuántos números quieres introducir?");
+			} while (vueltas == "" || isNaN(vueltas));
+			//let array = new Array(); //para cosas grandes // +1 +16
+			let array1 = []; //para cosas pequeñas // *2
+			let promedio = 0;
+			for (let i = 0; i < vueltas; i++) {
+				let number;
+				do {
+					do {
+						number = prompt("Dame un numero!");
+					} while (number == "" || isNaN(number));
+				} while (
+					!(
+						confirm(
+							'Estas seguro que quieres poner el número "' + number + "?"
+						) == true
+					)
+				);
+				array1.push(number);
+				promedio += parseInt(number);
+				// document.write("Ok " + number);
+			}
+			document.write(array1 + " Prom: " + promedio / array1.length);
+			console.log(number);
+			throw new Error("Fin del codigo");
+			throw "Fin de código";
+		</script>
+	</body>
+</html>

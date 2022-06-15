@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- Funciones -->
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		<p id="demo5"></p>
+		<p id="demo6"></p>
+		<p id="demo7"></p>
+		<p id="demo8"></p>
+		<p id="demo9"></p>
+		<p id="demo10"></p>
+		<p id="demo11"></p>
+		<p id="demo12"></p>
+		<p id="demo13"></p>
+		<script>
+			const letras = ["B", "C", "D", "AB", "AA"]; //pop y push desde este lado, el shift(añade uno) y unshift(quita uno) desde el otro lado.
+			document.getElementById("demo1").innerHTML = letras.toString();
+			letras.sort();
+			document.getElementById("demo2").innerHTML = letras.toString();
+			letras.reverse();
+			document.getElementById("demo3").innerHTML = letras.toString();
+
+			const numeros = [4, 3, 5, 1, 2, 10];
+			document.getElementById("demo4").innerHTML = numeros.toString();
+			numeros.sort();
+			document.getElementById("demo5").innerHTML = numeros.toString();
+			numeros.reverse();
+			document.getElementById("demo6").innerHTML = numeros.toString();
+
+			const numerosyLetras = [
+				"B",
+				"C",
+				"D",
+				"AB",
+				"AA",
+				4,
+				3,
+				5,
+				1,
+				2,
+				11,
+				10,
+				"b",
+				"c",
+				"d",
+				"ab",
+				"aa",
+			];
+			document.getElementById("demo7").innerHTML = numerosyLetras.toString();
+			numerosyLetras.sort();
+			document.getElementById("demo8").innerHTML = numerosyLetras.toString();
+			numerosyLetras.reverse();
+			document.getElementById("demo9").innerHTML = numerosyLetras.toString();
+
+			const misNumeros = [4, 3, 5, 1, 2, 11, 10, 10.5];
+			document.getElementById("demo10").innerHTML = misNumeros.toString();
+			misNumeros.sort();
+			document.getElementById("demo11").innerHTML = misNumeros.toString();
+			misNumeros.reverse();
+			document.getElementById("demo12").innerHTML = misNumeros.toString();
+			misNumeros.sort(function (a, b) {
+				return a - b;
+			});
+			document.getElementById("demo13").innerHTML = misNumeros.toString();
+		</script>
+	</body>
+</html>

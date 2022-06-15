@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script>
+			/**
+			 * ! pedirNumero()
+			 * ! Función que usa un prompt para solicitar un número
+			 * ! cuando lo obtenga enviará la información a la función "checkNumber()"
+			 * ! segun el return que tenga pintara en pantalla el número o no
+			 * return: text
+			 **/
+			function pedirNumero($p_texto) {
+				let prompt_number = prompt("add number");
+				if (checkNumber(prompt_number) != false) {
+					//$p_texto.innerHTML += prompt_number + "<br>";
+					return prompt_number + "<br>";
+				} else {
+					//$p_texto.innerHTML += "No es un numero valido<br>";
+					return '<b>"' + prompt_number + '"</b> No es un número válido<br>';
+				}
+			}
+
+			/**
+			 * ! checkNumber()
+			 * ! Función que revisa el parámetro "prompt_number"
+			 * ! y devolverá el número, en caso de que este sea un número
+			 * ! y no este comprendido entre 0 y 99999999
+			 * return: false
+			 * return: number
+			 **/
+			function checkNumber(prompt_number) {
+				/**
+                 * ! Zona de logs
+                    console.log(
+                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
+                    );
+                    console.log(
+                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
+                    );
+                    console.log('"' + prompt_number + '" < 0 ==> ' + (prompt_number < 0));
+                    console.log(
+                        '"' + prompt_number + '" > 99999999 ==> ' + (prompt_number > 99999999)
+                    );
+                    console.warn(
+                        "All ==> " +
+                            (prompt_number != "" &&
+                                !isNaN(prompt_number) &&
+                                (prompt_number < 0 || prompt_number > 99999999))
+                    );
+                **/
+				if (
+					prompt_number != "" &&
+					!isNaN(prompt_number) &&
+					(prompt_number < 0 || prompt_number > 99999999)
+				) {
+					//solo numeros
+					return prompt_number;
+				} else {
+					return false;
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkNumber("") == false, "");
+			console.assert(checkNumber("a") == false, "");
+			console.assert(checkNumber(-1) == -1, "");
+			console.assert(checkNumber(-4) == -4, "");
+			console.assert(checkNumber(1) == false, "");
+			console.assert(checkNumber(999999999) == 999999999, "");
+		</script>
+	</head>
+</html>

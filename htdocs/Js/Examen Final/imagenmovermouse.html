@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html onmousemove="sigueCursor()" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Imagen</title>
+		<style>
+			#img {
+				position: absolute;
+				pointer-events: none;
+			}
+			/* para poder clicar aunque este el raton */
+		</style>
+	</head>
+	<body>
+		<img id="img" src=".\img.png" width="200px" height="200px" />
+		<script>
+			function sigueCursor() {
+				corX = window.event.clientX;
+				corY = window.event.clientY;
+				img.style.left = corX + "px";
+				img.style.top = corY + "px";
+			}
+		</script>
+	</body>
+</html>

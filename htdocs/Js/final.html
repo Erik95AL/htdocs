@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Nom Cognom1 Cognom2" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EJERCICIO COOKIES</title>
+		<script defer src="./funcionesCookiesHead.js"></script>
+		<script defer src="./funcionesCookiesBody.js"></script>
+
+		<style>
+			body {
+				background-color: grey;
+			}
+			.red {
+				border: 4px solid red;
+				margin-top: 20px;
+			}
+			.blue {
+				border: 4px solid blue;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			function CheckcookieEnabled() {
+				if (navigator.cookieEnabled) {
+					alert("se pueden crear cookies xq no esta bloqueadas");
+				} else {
+					alert("coockies estan bloquedas en el navegador");
+				}
+			}
+
+			function setCookie(cname, cvalue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+				let expires = "expires=" + d.toUTCString();
+				document.cookie =
+					encodeURIComponent(cname) +
+					"=" +
+					encodeURIComponent(cvalue) +
+					";" +
+					expires +
+					";path=/";
+			}
+
+			function detectaCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(";");
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					c = c.trim();
+					if (c.indexOf(name) == 0) {
+						return "La cookie:     " + cname + "  :SI EXISTE";
+					}
+				}
+				return "NO Existe";
+			}
+
+			function getCookie(cname) {
+				let name = cname.trim() + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(";");
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == " ") {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "La cookie introducida NO existe";
+			}
+			function getCookieLeer(cname) {
+				let name = cname.trim() + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(";");
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					c = c.trim();
+					if (c.indexOf(name) == 0) {
+						return (
+							"\nNombre Cookie: " +
+							cname +
+							"\nNombre Value:  " +
+							c.substring(name.length, c.length)
+						);
+					}
+				}
+				return "La cookie introducida NO existe";
+			}
+
+			function checkCookie() {
+				let user = getCookie("nameUser");
+				if (user != "") {
+					alert("Welcome again " + user);
+				} else {
+					user = prompt("Please enter your name:", "");
+					if (user != "" && user != null) {
+						setCookie("nameUser", user, 30);
+					}
+				}
+			}
+			function removeCookie(cname) {
+				if (cname != "" && cname != null) {
+					setCookie(cname, "", -1);
+					return "Cookie eliminada correctamente";
+				} else {
+					return "La cookie NO  puede ser eliminada";
+				}
+			}
+			/*BOTON 1 CREAR COOKIES */
+
+			document
+				.getElementById("funCrearCookie")
+				.addEventListener("click", funCrearCookie);
+
+			const preg1 = document.getElementById("preg1");
+			const fecha = document.getElementById("fecha");
+			const cantidades = document.getElementById("cantidades");
+
+			function funCrearCookie() {
+				preg1.style.visibility = "visible";
+				fecha.style.visibility = "visible";
+				cantidades.style.visibility = "visible";
+			}
+			/*INPUT DATE */
+			document
+				.getElementById("funInputDate")
+				.addEventListener("click", funInputDate);
+			function funInputDate() {
+				let dias = document.getElementById("inputDate").value;
+				let resto = new Date(dias) - new Date();
+				let campo = resto / 1000 / 60 / 60 / 24;
+				console.log(Math.ceil(campo));
+				const nameCookie = document.getElementById("nameCookie");
+				const nameValue = document.getElementById("nameValue");
+
+				setCookie(nameCookie.value, nameValue.value, campo);
+
+				console.log(nameCookie.value);
+				console.log(nameValue.value);
+			}
+
+			/*INPUT CANTIDADES */
+			document
+				.getElementById("funInputCantidades")
+				.addEventListener("click", funInputCantidades);
+			function funInputCantidades() {
+				let anos = new Number(document.getElementById("anos").value * 365);
+				let meses = new Number(document.getElementById("meses").value * 30);
+				let dias = new Number(document.getElementById("dias").value);
+				let suma = anos + meses + dias;
+
+				setCookie(nameCookie.value, nameValue.value, suma);
+				console.log(nameCookie.value);
+				console.log(nameValue.value);
+				console.log(suma);
+				listCookies();
+			}
+
+			/*DETECTA COOKIES */
+			document
+				.getElementById("funDetectaCookie")
+				.addEventListener("click", funDetectaCookie);
+			function funDetectaCookie() {
+				alert(
+					detectaCookie(
+						prompt("Introduzca nombre de la cookie:"),
+						listCookies()
+					)
+				);
+			}
+			/*LEER COOKIES */
+			document
+				.getElementById("funLeerCookies")
+				.addEventListener("click", funLeerCookies);
+
+			const selector = document.getElementById("selector");
+			function funLeerCookies() {
+				alert(selector.value + "  " + getCookie(selector.value));
+			}
+			/*MODIFICAR COOKIE */
+			document
+				.getElementById("funModificarCookie")
+				.addEventListener("click", funModificarCookie);
+			function funModificarCookie() {
+				const var1 = document.getElementById("selector").value;
+				const var2 = getCookie(var1);
+				const preg2 = document.getElementById("preg2");
+				const fecha1 = document.getElementById("fecha1");
+				const cantidad1 = document.getElementById("cantidades1");
+				const nombreCookie = document.getElementById("nombreCookie");
+				const nombreValue = document.getElementById("nombreValue");
+
+				preg2.style.visibility = "visible";
+				fecha1.style.visibility = "visible";
+				cantidad1.style.visibility = "visible";
+				console.log(getCookie(var1));
+				nombreCookie.value = var1;
+				nombreValue.value = var2;
+			}
+			/*MODIFICAR COOKIE DATE1 */
+			document
+				.getElementById("funModificarDate1")
+				.addEventListener("click", funModificarDate1);
+
+			const inputDate1 = document.getElementById("inputDate1");
+
+			function funModificarDate1() {
+				setCookie(nombreCookie.value, nombreValue.value, inputDate1.value);
+				console.log(nombreCookie.value);
+				console.log(nombreValue.value);
+				console.log(inputDate1.value);
+			}
+
+			/*MODIFICAR COOKIE CANTIDAD 1 */
+			document
+				.getElementById("funModificarCantidad1")
+				.addEventListener("click", funModificarCantidad1);
+			function funModificarCantidad1() {
+				let anos = new Number(document.getElementById("anos1").value * 365);
+				let meses = new Number(document.getElementById("meses1").value * 30);
+				let dias = new Number(document.getElementById("dias1").value);
+				let suma1 = anos + meses + dias;
+
+				setCookie(nombreCookie.value, nombreValue.value, suma1);
+				console.log(nombreCookie.value);
+				console.log(nombreValue.value);
+				console.log(suma1);
+			}
+
+			/*BORRAR COOKIES */
+			document
+				.getElementById("funBorrarCookie")
+				.addEventListener("click", funBorrarCookie);
+			function funBorrarCookie() {
+				alert(removeCookie(selector.value, listCookies()));
+			}
+
+			/*DESPLEGABE LISTCOOKIES */
+
+			select = document.getElementById("selector");
+			listCookies();
+			function listCookies() {
+				var theCookies = document.cookie.split(";");
+				select.innerHTML = ""; /*vacia la lista selector */
+				for (var i = 1; i <= theCookies.length; i++) {
+					var opt = document.createElement("option");
+					let split = theCookies[i - 1].split("=")[0].trim();
+					opt.value = split;
+					opt.innerHTML = split;
+					select.appendChild(opt);
+				}
+			}
+		</script>
+
+		<div class="red">
+			<button onclick="CheckcookieEnabled()">BOTON 0 Enable/disabled</button>
+			<br />
+			<br />
+		</div>
+		<div class="red">
+			<button id="funCrearCookie">BOTON 1 CREAR cookie</button>
+
+			<div id="preg1" style="visibility: hidden">
+				<div>
+					<br />
+					<input type="text" placeholder="nameCookie" id="nameCookie" />
+					<input type="text" placeholder="nameValue" id="nameValue" />
+				</div>
+			</div>
+			<br />
+			<div id="fecha" style="visibility: hidden; display: inline">
+				<button id="funInputDate">Enviar Date</button>
+				<input id="inputDate" type="date" />
+				<br />
+				<br />
+			</div>
+			<div id="cantidades" style="visibility: hidden">
+				<button id="funInputCantidades">Enviar Cantidades</button>
+				<input type="text" placeholder="Dias" id="dias" />
+				<input type="text" placeholder="Meses" id="meses" />
+				<input type="text" placeholder="Anos" id="anos" />
+				<br />
+				<br />
+			</div>
+		</div>
+		<div class="red">
+			<button id="funDetectaCookie">BOTON 2 Detecta existe Cookie</button>
+			<br />
+			<br />
+		</div>
+		<div class="red">
+			<button id="funLeerCookies">BOTON 3 LEER COOKIE</button>
+			<br />
+			<br />
+		</div>
+		<div class="blue">
+			<button id="funModificarCookie">BOTON 4 MODIFICAR COOKIE</button>
+
+			<div id="preg2" style="visibility: hidden">
+				<div>
+					<br />
+					<input type="text" placeholder="nombreCookie" id="nombreCookie" />
+					<input type="text" placeholder="nombreValue" id="nombreValue" />
+				</div>
+			</div>
+			<br />
+			<div id="fecha1" style="visibility: hidden; display: inline">
+				<button id="funModificarDate1">Modificar Date1</button>
+
+				<input id="inputDate1" type="date" />
+				<br />
+				<br />
+			</div>
+			<div id="cantidades1" style="visibility: hidden">
+				<button id="funModificarCantidad1">Modificar Cantidad 1</button>
+
+				<input type="text" placeholder="Dias" id="dias1" />
+				<input type="text" placeholder="Meses" id="meses1" />
+				<input type="text" placeholder="Anos" id="anos1" />
+				<br />
+				<br />
+			</div>
+		</div>
+		<div class="red">
+			<button id="funBorrarCookie">BOTON 5 BORRAR COOKIES</button>
+			<br />
+			<br />
+		</div>
+
+		<div class="red">
+			<label>Guarda las cookies </label>
+			<br />
+			<br />
+			<select id="selector" name="selector" style="width: 30%"></select>
+		</div>
+	</body>
+</html>

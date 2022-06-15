@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<title>IFCD0110-UF1304</title>
+		<meta name="author" content="Erik Aguirre Lahora" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1304"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			body {
+				background-color: grey;
+			}
+			.main {
+				width: 97%;
+				margin: auto;
+				padding: 1%;
+				background-color: white;
+				border-radius: 10px;
+			}
+			fieldset {
+				background-color: white;
+				width: 95%;
+				margin: auto;
+				padding: 20px;
+			}
+			legend {
+				text-align: center;
+				background-color: grey;
+				color: white;
+				padding: 5px;
+			}
+			input[type="number"]::-webkit-inner-spin-button,
+			input[type="number"]::-webkit-outer-spin-button {
+				opacity: 1;
+			}
+			input {
+				margin: 5px;
+				padding: 2px;
+			}
+			input[type="text"],
+			input[type="email"],
+			input[type="password"],
+			input[type="url"],
+			input[type="date"],
+			input[type="time"],
+			input[type="month"],
+			input[type="week"],
+			input[type="number"],
+			input[type="tel"],
+			input[type="color"],
+			label[for="c_autonoma"] {
+				display: block;
+			}
+			input[type="text"],
+			input[type="password"] {
+				width: 50%;
+			}
+
+			form {
+				margin: auto;
+				width: 80%;
+			}
+			form div {
+				border: 2px solid orange;
+				margin: 5px 5px 5px 5px;
+				padding: 5px;
+			}
+			form div div {
+				border: 2px solid rgb(12, 202, 12);
+				margin: 5px 5px 5px 5px;
+			}
+			form div div div {
+				border: 2px solid red;
+				margin: 5px 5px 5px 5px;
+			}
+			form div div div div {
+				border: 2px solid blue;
+				margin: 5px 5px 5px 5px;
+			}
+			.center {
+				text-align: center;
+			}
+			.check {
+				text-align: right;
+			}
+			.txta {
+				width: 300px;
+				height: 100px;
+			}
+			.spacing {
+				border: 2px solid black;
+				margin: auto;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				width: 60%;
+				text-align: center;
+				overflow: hidden;
+			}
+			.spacing2 {
+				border: 2px solid black;
+				margin: auto;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				width: 50%;
+				text-align: center;
+				overflow: hidden;
+			}
+
+			textarea {
+				margin: auto;
+			}
+
+			input[type="reset"],
+			input[type="submit"] {
+				width: 40%;
+				min-width: 168px;
+				cursor: pointer;
+			}
+			input[type="reset"] {
+				background-color: red;
+				float: right;
+			}
+			input[type="submit"] {
+				background-color: green;
+				float: left;
+			}
+			footer {
+				background-color: red;
+				border-radius: 15px;
+				text-align: center;
+				width: 100%;
+				left: 0;
+				right: 0;
+				position: absolute;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<form method="get" action="./receptor.html" target="_self">
+				<fieldset>
+					<legend>Personalitzada:</legend>
+					<div>
+						<div>
+							<label>Dades personals:</label>
+							<div>
+								<label for="name">Nom:</label>
+								<input type="text" name="name" value="" autofocus required />
+							</div>
+							<div>
+								<label for="email">Correu electrónic:</label>
+								<input
+									type="email"
+									name="email"
+									value=""
+									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+									autocomplete="on"
+									placeholder="email"
+								/>
+							</div>
+							<div>
+								<label for="password">Contrasenya:</label>
+								<input type="password" name="password" required />
+							</div>
+							<div>
+								<label for="url">URL:</label>
+								<input
+									type="url"
+									name="url"
+									placeholder="Escribe la URL de tu página"
+								/>
+							</div>
+						</div>
+						<div>
+							<div>
+								<div>
+									<label for="date">Data:</label>
+									<input type="date" name="date" value="2022-04-07" />
+								</div>
+								<div>
+									<label for="time">Temps:</label>
+									<input type="time" name="time" value="14:00" />
+								</div>
+							</div>
+							<div>
+								<div>
+									<label for="month">Mes:</label>
+									<input type="month" name="month" value="2022-04" />
+								</div>
+								<div>
+									<label for="week">Setmana:</label>
+									<input type="week" name="week" value="2022-W14" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="check">
+							<label for="checkbox">comprovació 1</label>
+							<input type="checkbox" value="1" checked />
+							<br />
+							<label for="checkbox">comprovació 2</label>
+							<input type="checkbox" value="2" checked />
+						</div>
+						<div>
+							<label for="number">Número (min -10, max 10):</label>
+							<input type="number" name="number" min="-10" max="10" value="3" />
+						</div>
+						<div>
+							<label for="tel">Telèfon:</label>
+							<input
+								type="tel"
+								name="tel"
+								value=""
+								pattern="+[0-9]{2}-[0-9]{9}"
+							/>
+						</div>
+					</div>
+					<div>
+						<div>
+							<label for="radio">Selecció:</label>
+							<div class="center">
+								<input type="radio" name="html" />
+								<label for="radio">HTML</label>
+							</div>
+							<div class="center">
+								<input type="radio" name="css" checked />
+								<label for="radio">CSS</label>
+							</div>
+							<div class="center">
+								<input type="radio" name="js" />
+								<label for="radio">JS</label>
+							</div>
+						</div>
+						<div>
+							<label for="color">Color favorit:</label>
+							<input type="color" name="color" value="#ff0000" />
+						</div>
+						<div>
+							<label for="c_autonoma">C.Autònoma</label>
+							<select name="c_autonoma" multiple>
+								<option value="p_basc">País Basc</option>
+								<option value="canaries">Canàries</option>
+								<option value="cantabria">Cantàbria</option>
+								<option value="c_manxa">Castella - la Manxa</option>
+								<option value="c_lleo" selected>Castella i Lleó</option>
+								<option value="catalunya" selected>Catalunya</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<div>
+							<div class="spacing">
+								<textarea
+									cols="40"
+									rows="5"
+									placeholder="5 rows X 40 cols"
+								></textarea>
+							</div>
+							<div class="spacing">
+								<textarea
+									class="txta"
+									placeholder="widht:300px X height:100px"
+								></textarea>
+							</div>
+							<div class="spacing">
+								<input type="file" name="" id="" accept=".zip" />
+							</div>
+						</div>
+						<div class="spacing2">
+							<input type="submit" value="Sender" />
+							<input type="reset" value="Limpiar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<footer>
+			<p><b>author</b>: Erik Aguirre Lahora</p>
+			<p>
+				<a href="mailto:erik.aguirre.1995.bcn@hotmail.com"
+					>erik.aguirre.1995.bcn@hotmail.com</a
+				>
+			</p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 07/04/2022</p>
+		</footer>
+	</body>
+</html>

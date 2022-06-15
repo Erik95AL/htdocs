@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body onload="console.time();llamadaAfuncion();console.timeEnd();">
+		<script>
+			let i;
+			let body = document.getElementsByTagName("body")[0];
+
+			for (let i = 1; i <= 20; i++) {
+				let button = document.createElement("button");
+				button.innerHTML = "Button" + i;
+				button.id = "button" + i;
+				body.appendChild(button);
+
+				// button.addEventListener("click", function () {
+				// 	//()=> es lo mismo que poner function (), simplemente te lo ahorras, como en estos casos. funcionará si se pone alert(button.inner..etc)
+				// 	alert(this.innerHTML + " es un botón");
+				// });
+				button.addEventListener("click", function () {
+					console.log(llamarfunction(button.id));
+				});
+			}
+
+			function llamarfunction(elId) {
+				console.log(elId);
+				switch (elId) {
+					case "button1":
+						console.log("OK");
+						break;
+					case "button2":
+						return 2;
+					case "button5":
+					case "button6":
+						console.log("OK 5 y 6");
+						break;
+
+					default:
+						console.log("otros");
+						break;
+				}
+			}
+			// let body = document.getElementByTagName("body")[0] así se selecciona el body, el primero [0] por si hay más archivos de codigo vinculado a este.
+			console.time("test1");
+			for (let i = 0; i < 100000; i++) {
+				//some code
+				console.table("");
+			}
+			console.timeEnd("test1");
+		</script>
+	</body>
+</html>

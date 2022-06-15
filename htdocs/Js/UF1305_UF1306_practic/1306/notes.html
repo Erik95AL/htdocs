@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<title>IFCD0110-UF1306</title>
+		<meta name="author" content="Erik Aguirre Lahora" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1306"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./notes.css" />
+		<script defer src="./notes.js"></script>
+		<style>
+			.center {
+				text-align: center;
+			}
+			.total {
+				background-color: #b8b8b8;
+			}
+			/**/
+			.suspes {
+				color: red;
+			}
+			.aprovat {
+				color: yellow;
+			}
+			.notable {
+				color: greenyellow;
+			}
+			.excellent {
+				color: green;
+			}
+			/**/
+			.prom {
+				background-color: aqua;
+			}
+			/*buttons*/
+			.botoneraseparada {
+				display: flex;
+				justify-content: space-between;
+				margin: 2%;
+			}
+			.botonera button {
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			.afegeix {
+				background-color: #4caf50;
+			}
+			.esborra {
+				background-color: #c94848;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>Nom de la UF</h2>
+				<table id="tabla1">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Examen 1</th>
+							<th>Examen 2</th>
+							<th>Examen 3</th>
+							<th class="total">Total (Número):</th>
+							<th class="total">Total (Qualificació):</th>
+						</tr>
+					</thead>
+					<tbody id="tableData">
+						<tr>
+							<th><button>Alumne 1</button></th>
+							<td>Nota1 A1</td>
+							<td>Nota2 A1</td>
+							<td>Nota3 A1</td>
+							<td class="total">total A1</td>
+							<td class="total">total A1</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 2</button></th>
+							<td>Nota1 A2</td>
+							<td>Nota2 A2</td>
+							<td>Nota3 A2</td>
+							<td class="total">total A2</td>
+							<td class="total">total A2</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 3</button></th>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td class="total suspes"><b>2</b></td>
+							<td class="total suspes">(Suspès)</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 4</button></th>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td class="total aprovat"><b>6</b></td>
+							<td class="total aprovat">(Aprovat)</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 5</button></th>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td class="total notable">6+7+8/3=<b>7</b></td>
+							<td class="total notable">(Notable)</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 6</button></th>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td class="total excellent">8+9+10/3=<b>9</b></td>
+							<td class="total excellent">(Excel·lent)</td>
+						</tr>
+						<tr>
+							<th><button>Alumne 7</button></th>
+							<td>10</td>
+							<td>9</td>
+							<td>8</td>
+							<td class="total excellent"><b>9</b></td>
+							<td class="total excellent">(Excel·lent)</td>
+						</tr>
+					</tbody>
+					<tr class="prom">
+						<th colspan="4">Mitjana classe:</th>
+						<td class="suspes">A1+A2+2+6+7+9/6= <b id="totalNotas">¿X?</b></td>
+						<td class="aprovat">(Aprovat)</td>
+					</tr>
+				</table>
+			</div>
+			<div class="botonera botoneraseparada">
+				<button id="mostrarAlumnos" class="afegeix">Afegeix més alumnes</button>
+				<div id="mostrar" style="visibility: hidden">
+					<fieldset style="background-color: grey">
+						<legend style="background-color: red">AGREGAR ALUMNO</legend>
+						<label>Nombre </label>
+						<input id="input_Nombre" type="text" />
+						<label>Examen 1 </label>
+						<input id="input_Exam1" type="text" />
+						<label>Examen 2</label>
+						<input id="input_Exam2" type="text" />
+						<label>Examen 3</label>
+						<input id="input_Exam3" type="text" />
+
+						<button style="background-color: black; color: white" id="Agregar">
+							Agregar
+						</button>
+					</fieldset>
+				</div>
+			</div>
+			<div class="botonera botoneraseparada">
+				<button onclick="exportTableToCSV('members.csv')" class="afegeix">
+					Download list
+				</button>
+				<div class="botonera center">
+					<button onclick="genera_tabla()" class="afegeix">
+						Afegeix nova taula
+					</button>
+				</div>
+				<button onclick="removeTable()" class="esborra">
+					Esborra la taula
+				</button>
+			</div>
+		</main>
+		<main>
+			<div class="botonera botoneraseparada">
+				<button id="crearUF" class="afegeix">Afegeix UF</button>
+			</div>
+			<div id="uftitle"></div>
+		</main>
+		<footer>
+			<p><b>author</b>: Erik Aguirre Lahora</p>
+			<p>
+				<a href="mailto:erik.aguirre.1995.bcn@hotmail.com"
+					>erik.aguirre.1995.bcn@hotmail.com</a
+				>
+			</p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 31/05/2022</p>
+		</footer>
+	</body>
+</html>

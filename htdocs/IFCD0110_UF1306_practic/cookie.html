@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Erik Aguirre Lahora" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1306"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<script defer src="./cookieshead.js"></script>
+		<script defer src="./cookiesbody.js"></script>
+
+		<title>IFCD0110-UF1306</title>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>UF1306 1</h2>
+			</div>
+
+			<div class="container">
+				<button id="crearCookie">Crear galeta</button>
+
+				<div id="preg1" style="visibility: hidden">
+					<div>
+						<br />
+						<input type="text" placeholder="nameCookie" id="nameCookie" />
+						<input type="text" placeholder="nameValue" id="nameValue" />
+					</div>
+				</div>
+				<br />
+
+				<div id="fecha" style="visibility: hidden; display: inline">
+					<button id="funInputDate">Enviar Date</button>
+					<input id="inputDate" type="date" />
+					<br />
+					<br />
+				</div>
+				<div id="cantidades" style="visibility: hidden">
+					<button id="inputCantidades">Enviar Cantidades</button>
+					<input type="text" placeholder="Dias" id="dias" />
+					<input type="text" placeholder="Meses" id="meses" />
+					<input type="text" placeholder="Anos" id="anos" />
+					<br />
+					<br />
+				</div>
+			</div>
+
+			<div class="container">
+				<button id="leerCookies">Llistar totes les galetes</button>
+			</div>
+			<div class="container">
+				<div class="box">
+					<select name="llistaGaletes" id="llistaGaletes">
+						<option value="" selected></option>
+					</select>
+				</div>
+
+				<button
+					onclick="document.getElementById('expandir').style.visibility= 'visible'"
+				>
+					Seleccionar galeta
+				</button>
+				<div id="expandir" style="visibility: hidden">
+					<button id="modificarCookie">Modificar galeta</button>
+					<button id="borrarCookie">Eliminar galeta</button>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p><b>author</b>: Erik Aguirre Lahora</p>
+			<p>
+				<a href="mailto:erik.aguirre.1995.bcn@hotmail.com"
+					>erik.aguirre.1995.bcn@hotmail.com</a
+				>
+			</p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 26/05/2022</p>
+		</footer>
+	</body>
+</html>

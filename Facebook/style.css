@@ -1,0 +1,33 @@
+body {
+	background-color: grey;
+}
+header {
+	/*background-color: rgb(53, 53, 228);
+	position: fixed;*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: white;
+}
+header div h1 {
+	float: left;
+	width: 50%;
+	margin: auto;
+}
+header form {
+	float: right;
+}
+header form label {
+	display: block;
+}
+article {
+	float: right;
+	width: 50%;
+}
+.main {
+	margin-top: 60px;
+}
+input[type="week"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+	opacity: 1;
+}

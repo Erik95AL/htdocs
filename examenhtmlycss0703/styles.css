@@ -1,0 +1,127 @@
+body {
+	background-color: grey;
+}
+.main {
+	width: 97%;
+	margin: auto;
+	padding: 1%;
+	background-color: white;
+	border-radius: 10px;
+}
+fieldset {
+	background-color: white;
+	width: 95%;
+	margin: auto;
+	padding: 20px;
+}
+legend {
+	text-align: center;
+	background-color: grey;
+	color: white;
+	padding: 5px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	opacity: 1;
+}
+input {
+	margin: 5px;
+	padding: 2px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="number"],
+input[type="tel"],
+input[type="color"],
+label[for="c_autonoma"] {
+	display: block;
+}
+input[type="text"],
+input[type="password"] {
+	width: 50%;
+}
+
+form {
+	margin: auto;
+	width: 80%;
+}
+form div {
+	border: 2px solid orange;
+	margin: 5px 5px 5px 5px;
+	padding: 5px;
+}
+form div div {
+	border: 2px solid rgb(12, 202, 12);
+	margin: 5px 5px 5px 5px;
+}
+form div div div {
+	border: 2px solid red;
+	margin: 5px 5px 5px 5px;
+}
+form div div div div {
+	border: 2px solid blue;
+	margin: 5px 5px 5px 5px;
+}
+.center {
+	text-align: center;
+}
+.check {
+	text-align: right;
+}
+.txta {
+	width: 300px;
+	height: 100px;
+}
+.spacing {
+	border: 2px solid black;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 60%;
+	text-align: center;
+	overflow: hidden;
+}
+.spacing2 {
+	border: 2px solid black;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 50%;
+	text-align: center;
+	overflow: hidden;
+}
+
+textarea {
+	margin: auto;
+}
+
+input[type="reset"],
+input[type="submit"] {
+	width: 40%;
+	min-width: 168px;
+	cursor: pointer;
+}
+input[type="reset"] {
+	background-color: red;
+	float: right;
+}
+input[type="submit"] {
+	background-color: green;
+	float: left;
+}
+footer {
+	background-color: red;
+	border-radius: 15px;
+	text-align: center;
+	width: 100%;
+	left: 0;
+	right: 0;
+	position: absolute;
+	margin-top: 20px;
+}

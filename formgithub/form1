@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>guardar o loguear</title>
+		<meta name="author" content="Erik Aguirre" />
+		<meta name="description" content="código curso IFCD0110" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://img.icons8.com/nolan/344/sugarcane.png"
+		/>
+		<link rel="stylesheet" href="/form2/style.css" />
+		<style>
+			label {
+				color: white;
+			}
+			input {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			input[type="number"]::-webkit-inner-spin-button,
+			input[type="number"]::-webkit-outer-spin-button {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<form
+			class="formcenter indexmain"
+			method="get"
+			action="php0.php"
+			target="_self"
+		>
+			<fieldset class="index cajetincenter btcenter">
+				<legend>Formulario edad</legend>
+				<div>
+					<label for="edad">Edad:</label>
+					<input type="number" name="edad" />
+				</div>
+				<div class="btcenter">
+					<input class="bt" type="submit" />
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>

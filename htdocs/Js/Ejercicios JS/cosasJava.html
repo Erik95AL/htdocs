@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Math</h2>
+
+		<p>
+			Math.random() returns a random number between 0 (inclusive) and 1
+			(exclusive):
+		</p>
+
+		<p id="demo"></p>
+
+		<script>
+			function generateRandomInt(min, max) {
+				let x = Math.floor(Math.random() * (max - min) + min);
+				document.getElementById("demo").innerHTML = x;
+			}
+			generateRandomInt(200, 900);
+
+			/////////////////////////////////////////////////////////////////////////////////////
+			let a = Math.pow(4, 3); //Math.pow() devuelve el valor de x elevado a y (x y ).
+			let b = Math.round(2.5); // redondea un número al entero más cercano.
+			Math.ceil(1.4); //redondea un número HACIA ARRIBA al entero más cercano y devuelve el resultado.
+			let c = Math.trunc(8.76); //devuelve la parte entera de un número. //Este método NO redondeará el número hacia arriba o hacia abajo al entero más cercano, sino que simplemente eliminará los decimales.
+			let d = Math.abs(-7.25); //devuelve el valor absoluto de un número. Valor absoluto es que si le pasas un negativo, se cambia a positivo y a la inversa.
+			document.getElementById("demo").innerHTML = Math.abs(Math.trunc(8.76));
+		</script>
+
+		<script>
+			/**
+			 * !JSON (JavaScript Object Notation)
+			 * **/
+			var myObj = { name: "John", age: 31, city: "New York" };
+			var myJSON = JSON.stringify(myObj);
+			//document.getElementById("demo").innerHTML=JSON
+			window.location =
+				"https://www.w3schools.com/jsref/demo_json.php?x=" + myJSON; //widow.location te puede redirigir directamente
+
+			//decodeURIComponent(https://www.w3schools.com/jsref/demo_json.php?x={%22name%22:%22John%22,%22age%22:31,%22city%22:%22New%20York%22}) te transforma este estilo de enlace a uno legible.
+
+			// parse() =>	Parses a JSON string and returns a JavaScript object De texto a objeto.
+			// stringify()=>	Convert a JavaScript object to a JSON string De objeto a texto.
+			var characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+			var result = "";
+
+			var charactersLength = characters.length;
+
+			for (var i = 0; i < 5; i++) {
+				result += characters.charAt(
+					Math.floor(Math.random() * charactersLength)
+				);
+			}
+
+			document.getElementById("demo").innerHTML = result;
+
+			/////////////////////////////////////////////////////////////////////////
+
+			let characters =
+				"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+			let result = "";
+
+			let length = 10; // Customize the length here.
+
+			for (let i = length; i > 0; --i)
+				result +=
+					characters[Math.round(Math.random() * (characters.length - 1))];
+
+			console.log(result);
+		</script>
+	</body>
+</html>

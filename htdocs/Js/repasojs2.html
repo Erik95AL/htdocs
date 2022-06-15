@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			let posicion = 0;
+			/////////////////0,     1,      2
+			const array = ["abc", "123", "juan"];
+			const posicionesMax = array.length;
+
+			/**funcioncosa()
+			 * @param recorre el array para ambas direcciones.
+			 **/
+			function funcioncosa(param) {
+				posicion = posicion + param;
+
+				console.log(posicion);
+				if (posicion >= posicionesMax) {
+					console.log("IN");
+
+					posicion = 0;
+				}
+				console.log("document");
+
+				if (posicion < 0) {
+					console.log("OUT");
+
+					posicion = 2;
+				}
+
+				document.getElementById("laP").innerHTML = array[posicion];
+				return array[posicion];
+			}
+		</script>
+	</head>
+	<body>
+		<p id="laP"></p>
+		<button onclick="funcioncosa(+1)">+1</button>
+
+		<button onclick="funcioncosa(-1)">-1</button>
+		<script>
+			/**
+			 * ! Zona Assert:
+			 * *Pruebas de que la función realiza la tarea requerida.
+			 **/
+			console.assert(funcioncosa(+1) == "123");
+			console.assert(funcioncosa(+1) == "juan");
+			console.assert(funcioncosa(+1) == "abc");
+			console.assert(funcioncosa(-1) == "juan");
+			console.assert(funcioncosa(-1) == "123");
+			console.assert(funcioncosa(-1) == "abc");
+		</script>
+	</body>
+</html>

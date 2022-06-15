@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- Funciones -->
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		<p id="demo5"></p>
+		<p id="demo6"></p>
+		<p id="demo7"></p>
+		<p id="demo8"></p>
+		<script>
+			const fruits = ["Banana", "Orange", "Apple", "Mango"]; //pop y push desde este lado, el shift(añade uno) y unshift(quita uno) desde el otro lado.
+			document.getElementById("demo1").innerHTML = fruits.toString();
+			document.getElementById("demo2").innerHTML = fruits.join(" * ");
+			fruits.pop();
+			document.getElementById("demo3").innerHTML = fruits.join(" - ");
+			fruits.push("kiwi");
+			document.getElementById("demo4").innerHTML = fruits.join(" + ");
+			fruits.shift();
+			document.getElementById("demo5").innerHTML = fruits.join(" : ");
+			fruits.unshift("Lemon");
+			document.getElementById("demo6").innerHTML = fruits.join(" * ");
+			fruits[fruits.length] = "Apple";
+			document.getElementById("demo7").innerHTML = fruits.join(" * ");
+			delete fruits[0];
+			document.getElementById("demo8").innerHTML = fruits.join(" * ");
+
+			// AAAA....1111aaaa
+		</script>
+	</body>
+</html>

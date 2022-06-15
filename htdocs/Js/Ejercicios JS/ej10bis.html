@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta fun1="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 10 BIS</title>
+		<script>
+			function fun1() {
+				document.getElementById("1").style.backgroundColor = "red";
+				document.bgColor = "red";
+			}
+			function fun2() {
+				document.getElementById("2").style.backgroundColor = "yellow";
+				document.bgColor = "yellow";
+			}
+			function fun3() {
+				document.getElementById("3").style.backgroundColor = "blue";
+				document.bgColor = "blue";
+			}
+			function fun4() {
+				document.getElementById("4").style.backgroundColor = "green";
+				document.bgColor = "green";
+			}
+			function fun5() {
+				document.getElementById("5").style.backgroundColor = "purple";
+				document.bgColor = "purple";
+			}
+			function fun6() {
+				document.getElementById("1").style.backgroundColor =
+					document.getElementById("2").style.backgroundColor =
+					document.getElementById("3").style.backgroundColor =
+					document.getElementById("4").style.backgroundColor =
+					document.getElementById("5").style.backgroundColor =
+						"white";
+				document.bgColor = "white";
+			}
+		</script>
+		<style>
+			button {
+				width: 10%;
+				height: 50px;
+				margin-top: 100px;
+				margin: 10px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width: 99%; text-align: center; margin-top: 200px">
+			<button id="1" onmouseover="fun1()" onmouseout="fun6()">Color 1</button>
+			<button id="2" onmouseover="fun2()" onmouseout="fun6()">Color 2</button>
+			<button id="3" onmouseover="fun3()" onmouseout="fun6()">Color 3</button>
+			<button id="4" onmouseover="fun4()" onmouseout="fun6()">Color 4</button>
+			<button id="5" onmouseover="fun5()" onmouseout="fun6()">Color 5</button>
+		</div>
+	</body>
+</html>

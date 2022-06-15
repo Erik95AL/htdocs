@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		/**
+		<!-- <script defer src="./file.js">
+			defer es lo mismo que el async pero con este atributo te carga por ultimo el script
+				async es sleepear y hace que body se espere hasta que js se cargue y después carga todo el conjunto, pero con algo que no cargue nunca afectará a que jamás cargue la página
+					async defer se pueden utilizar ambos pero es recomendable utilizar solo defer
+						* !import files
+		</script> -->
+		**/
+		<style>
+			body {
+				background-color: grey;
+			}
+			button {
+				cursor: pointer;
+			}
+			.rojo {
+				background-color: red;
+			}
+			.azul {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body onload="">
+		<h1 id="title">H1</h1>
+		<p class="asd" id="juan">parragraph 1</p>
+		<p id="nombre" class="asd" name="juan">parragraph 2</p>
+		<p class="kkkk">parragraph 3</p>
+		<p class="kkkk">parragraph 4</p>
+		<br />
+		<button onclick="alert('asd')">Button</button>
+		<!--onclick: llamada a js por parte del usuario-->
+		<br /><br />
+		<!-- <button onblur="alert('asd')">Button</button> -->
+		<!--onblur: -->
+		<input type="color" id="color" /><br /><br />
+		<button onclick="cosa3()">Click</button>
+		<button onclick="replacecolor()">Color</button>
+		<button onclick="replacecolor1()">Color</button>
+		<button
+			onclick="replacecolor2(document.getElementById('color').value, this)"
+			id="colorinchi"
+		>
+			Send Color
+		</button>
+		<script>
+			function replacecolor2(color, pepe) {
+				console.log(color);
+				pepe.style.backgroundColor = color;
+			}
+			// function replacecolor2(color) {
+			// 	console.log(color);
+			// 	// document.getElementsByTagName("button")[4].style.backgroundColor =color;
+			// 	document.getElementById("colorinchi").style.backgroundColor = color;
+			// }
+			function cosa3() {
+				document.getElementById("nombre").innerHTML = "asd"; //modifica el contenido dentro del atributo id
+				document.getElementById("nombre").innerHTML += "ASD"; //añade al contenido lo que se le aplique
+
+				document.getElementById("nombre").style.backgroundColor = "#848484";
+
+				console.log(document.getElementsByClassName("asd")); //asd
+				console.log(document.getElementsByClassName("asd")[0]);
+
+				document.getElementsByClassName("asd")[0].style.backgroundColor = "red"; //asd
+
+				console.log(document.getElementsByClassName("asd").length);
+				let $cantidad = document.getElementsByClassName("asd").length;
+
+				for (let $i = 0; $i < $cantidad; $i++) {
+					document.getElementsByClassName("asd")[$i].style.backgroundColor =
+						"green";
+					console.log("$i=" + $i);
+				}
+
+				// document.getElementsByName(); //juan
+
+				document.getElementsByTagName("p")[0].innerHTML = "AAA";
+
+				document.getElementsByTagName("p")[2].classList.add("rojo"); //con esto añades una clase donde sea necesario o se quiera
+
+				document.getElementsByTagName("p")[2].classList.remove("kkkk");
+
+				document.getElementsByTagName("p")[3].classList.add("rojo");
+
+				document.getElementsByTagName("p")[3].classList.replace("rojo", "azul");
+				document.getElementsByTagName("p")[3].classList.replace("azul", "rojo");
+			}
+			let $a = 0;
+			let $text = document.getElementsByTagName("p")[3];
+			function replacecolor() {
+				$a++;
+				if ($a % 2 == 0) {
+					$text.classList.replace("azul", "rojo");
+				} else {
+					$text.classList.replace("rojo", "azul");
+				}
+			}
+			function replacecolor1() {
+				//One time
+				document.getElementsByTagName("p")[3].classList.replace("azul", "rojo");
+			}
+
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			document.write("<br/><hr/>");
+			let $txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			console.log($txt.length);
+			console.log($txt.slice(2, 8));
+			console.log($txt.slice(-12)); //El slice se puede utilizar para aplicar valores negativos.
+			console.log($txt.slice(6));
+			console.log($txt.slice(6, $txt.length - 6));
+
+			console.log($txt.substring(2, 8)); //hace lo mismo que el slice pero no puede utilizar valores negativos.
+			console.log($txt.substring(2));
+
+			let $texto = "asdasd quesequita MICROSOFT Microsoft";
+			console.log($texto.replace("quesequita", "quesepone"));
+			console.log($texto.replace(/MICROSOFT/i, "W3Schools")); //  /i sustituira el dato siempre y cuando sea IDENTICO ej: MICROSOFT ---> W3Schools
+			console.log($texto.replace(/Microsoft/g, "W3Schools")); //  /g sustituira el dato siempre, sea o no sea identico, simplemente debe coincidir el dato  ej: MiCrOsOfT ---> W3Schools
+
+			//.toUpperCase() Pone mayúsculas
+			//.toLowerCase() Pone minúsculas
+
+			let $txt1 = " ABC";
+			let $txt2 = "DEF ";
+			document.write($txt1.concat(" X X ", $txt2));
+			document.write($txt1.concat($txt2));
+			document.write($txt1.trim()); //limpia espacios
+			document.write($txt1.concat(" X      X ", $txt2).trim());
+
+			document.write("<hr/>");
+
+			document.write($txt.padStart(27, "$"));
+			document.write("<br/>");
+			document.write($txt.padEnd(30, "asd"));
+
+			document.write("<br/><hr/>");
+
+			document.write($txt.charAt(4)); // selecciona el caracter que esté en esa posición
+			document.write($txt.charAt(3));
+			document.write($txt.charAt(2));
+			document.write($txt.charAt(1));
+			document.write($txt.charAt(0));
+			document.write("<br/>");
+			document.write($txt.charCodeAt(4));
+			document.write($txt.charCodeAt(3));
+			document.write($txt.charCodeAt(2));
+			document.write($txt.charCodeAt(1));
+			document.write($txt.charCodeAt(0));
+			document.write("<br/><hr/>");
+
+			let $hola = "HELLO WORLD BOB";
+			document.write($hola[0]);
+			document.write($hola[1]);
+			document.write("<br/>");
+			document.write($hola.split(" "));
+			document.write($hola.split(" ")[0]);
+			document.write($hola.split(" ")[1]);
+			//document.write($hola.split("o")[1]);// //no funciona con minúsculas, a no ser que si las haya
+
+			document.write("<br/><hr/>");
+
+			document.write($hola.indexOf("J")); // -1
+			document.write($hola.indexOf("O")); //4
+			document.write($hola.indexOf("O", 5)); //7
+			document.write($hola.lastIndexOf("O")); //13
+			document.write($hola.lastIndexOf("O", 5));
+
+			document.write("<br/><hr/>");
+
+			let $texto4 = "The rain in SPAIN stays mainly in the plain";
+			document.write($texto4.match(/ain/));
+			document.write($texto4.match(/ain/g)); //Buscador
+			document.write($texto4.includes("rain")); //true
+			document.write($texto4.includes("juan")); //false
+			document.write($texto4.startsWith("The")); //true (busca si empieza por)
+			document.write($texto4.startsWith("Juan")); //false
+			//.endsWith (busca si termina por)
+			document.write($texto4.toString(10)); //recorta
+
+			document.write($texto4.trim().toLocaleLowerCase().startsWith("The")); //true (busca si empieza por)
+
+			document.write("<br/><hr/>");
+
+			let number;
+			do {
+				number = prompt("Dame un puto numero");
+			} while (isNaN(number));
+			{
+			}
+			alert(number);
+		</script>
+		<!-- <script>
+			$var1 = "cosa";
+			document.write($var1);
+			console.log(typeof $var1);
+			function cosa(texto) {
+				alert(texto);
+			}
+
+			cosa("otro texto");
+
+			let $var1 = 1;
+			$var1 = 2;
+			cosa1();
+			function cosa1() {
+				$var1 = 5;
+			}
+			console.log($var1);
+
+			si no llamas a la funcion "cosa1" el valor de la variable será 2, ya que el segundo se superpone sobre la primera variable con el mismo nombre
+			 _algo $algo algo se le puede llamar de varias formas a una variable, teniendo en cuenta que con el mismo nombre puedes tener varios datos, simplemente cambia el tener o no algo igual delante p.ej:(_algo, $algo, algo)
+
+			dentro de funciones es preferible declarar con let o var y fuera puedes hacerlo con el resto.
+
+			var $var2 = 1;
+			$var2 = 2;
+			cosa2();
+			{
+				$var = 5;
+			}
+			console.log($var2);
+
+			const _PI = 3.1416;
+
+			let a, b, c;
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			a = 1;
+			b = 2;
+			c = 3;
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			console.log("");
+
+			// #####################################################
+			function run() {
+				//FUNCION DECLARADA
+				var foo = "Foo";
+				let bar = "Bar";
+
+				console.log(foo, bar);
+
+				{
+					//FUNCION NO DECLARADA
+					var moo = "Mooo"; //se puede aplicar fuera de la funcion no declarada
+					let baz = "Bazz"; //no se puede aplicar fuera de la funcion no declarada
+					juanito = "pepito"; //por defecto es como si llevase delante un VAR
+					console.log(moo, baz);
+				}
+				console.log(moo);
+				console.log(baz); //error
+			}
+			run();
+		</script> -->
+	</body>
+</html>

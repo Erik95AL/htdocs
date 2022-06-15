@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Erik Aguirre" />
+    <meta name="description" content="código curso IFCD0110" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Ejercicio 4</title>
+
+    <script type="text/javascript">
+
+            /** pedirTexto()
+             * @$p_texto: recibe el valor de la variable de dentro de la función. 
+             * 
+             * return: devuelve el texto en mayúsculas.
+             * return: devuelve el valor de $texto en negrita indicando error
+             **/   
+
+            function pedirTexto($p_texto) { 
+       
+                let $texto = prompt("Introduce un texto");
+
+                if(checkText($texto)!= false){ 
+
+                    // document.write(($texto .toUpperCase()) + " es texto<br/>")
+                    // $p_texto.innerHTML += $texto.toUpperCase() + "<br>";
+
+                    return $texto.toUpperCase() + "<br />";
+
+                }else{
+                    // document.write($texto.toUpperCase() + " Error <br/>");
+                    return '<b>"' + $texto + '"</b> Error '; 
+
+                }
+
+            }
+
+               /** checkText()
+             * 
+             * return: devuelve el texto.
+             * return: devuelve un boleano indicando que la función está recibiendo un valor que no sea texto.
+             **/       
+
+            function checkText($texto) {
+
+                if ($texto!="" && isNaN($texto)) {
+
+                    return $texto
+
+                } else {
+
+                    return false
+                    
+                }
+                
+            }
+
+            /**
+            * ! Zona Assert:
+            * *Pruebas de que la funcion realiza la tarea requerida.
+            **/
+
+            console.assert(checkText("") == false, "");
+			console.assert(checkText("a") == "A","");
+			console.assert(checkText("abc") == "ABC","");
+			console.assert(checkText("a12b") == "A12B","");
+			console.assert(checkText("1ab2") == "1AB2","");
+			console.assert(checkText("AbC") == "ABC","");
+			console.assert(checkText("ABC") == "ABC","");
+			console.assert(checkText(-4) == false, "");
+			console.assert(checkText(4) == false, "");
+
+            /**
+            * ! adasdd
+            * * lasmkjsadk
+            * TODO: dsadsad
+            * @param myParam asdsadda
+            **/
+
+            function funcion1($texto1) {
+                if($texto1 !="" && isNaN($texto1)){
+                return ($texto1+"").toUpperCase()+ "<br />";
+            }else{
+                //return '<b>"' + $texto1 + '"</b> Error ';// solo puede haber un return, porque en cuanto llega a uno se para y sale de la funcion
+                 
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <p id="texto"></p>
+    <button onclick="document.getElementById('texto').innerHTML+=pedirTexto()">
+        Pedir Texto</button>
+
+        <p id="cosa"></p>
+    <button onclick="document.getElementById('cosa').innerHTML+=funcion1(prompt('add text'))">
+        Pedir Texto1</button>
+</body>
+</html>

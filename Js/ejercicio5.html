@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Erik Aguirre" />
+		<meta name="description" content="código curso IFCD0110" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 5</title>
+
+		<script type="text/javascript">
+			/** pedirNumero()
+			 * @$numero: recibe el valor de la variable de dentro de la función.
+			 *
+			 * return: devuelve el número solo si es mayor a 10
+			 * return: devuelve el valor enviado solo si no es mayor a 10
+			 **/
+			let $numero = "";
+			const $error = " no es un valor númerico o no es mayor a 10<br />";
+			console.log($numero);
+			function pedirNumero($numero) {
+				if ($numero != "" && !isNaN($numero) && $numero > 10) {
+					return $numero + " si es mayor a 10<br />";
+				} else {
+					return $numero + $error;
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * *Pruebas de que la función realiza la tarea requerida.
+			 **/
+
+			console.assert(pedirNumero("") == "" + $error, "");
+			console.assert(pedirNumero("a") == "a" + $error, "");
+			console.assert(pedirNumero(-1) == -1 + $error, "");
+			console.assert(pedirNumero(0) == 0 + $error, "");
+			console.assert(pedirNumero(10) == 10 + $error, "");
+			console.assert(pedirNumero(11) == 11 + " si es mayor a 10<br />", "");
+			console.assert(
+				pedirNumero(99999999) == 99999999 + " si es mayor a 10<br />",
+				""
+			);
+		</script>
+	</head>
+	<body>
+		<p id="cosa"></p>
+		<button
+			onclick="document.getElementById('cosa').innerHTML+=pedirNumero(prompt('add number'))"
+		>
+			Pedir Número
+		</button>
+	</body>
+</html>

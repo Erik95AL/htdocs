@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/** pedirNumero()
+			 * @$union es $texto y $texto1, se unen valores, se le quitan los espacios y se convierte en minúscula.
+			 * @totalLetras indica la cantidad del valor total que tiene $union.
+			 * @$fin sustituye el selector.
+			 * @fusion y @$fusion1 simplifican un conjunto de variables.
+			 *
+			 * return: printea y a la vez se pueden hacer pruebas con los assert.
+			 *
+			 **/
+
+			function pedirNumero($texto, $texto1) {
+				let $union = ($texto + ";" + $texto1).replace(/ /g, "").toLowerCase();
+
+				let $totalLetras = $union.length;
+				// document.write($union + "=" + $totalLetras + "<br />");
+				let $fin = $union.split(";");
+				// document.write($fin[0] + $fin[1] + "=" + $totalLetras);
+				let $fusion = $union + "=" + $totalLetras;
+				let $fusion1 = $fin[0] + $fin[1] + "=" + $totalLetras;
+				return $fusion + "<br/>" + $fusion1 + "<br/>";
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * *Pruebas de que la función realiza la tarea requerida.
+			 **/
+			console.assert(pedirNumero("", "") == ";=1<br/>=1<br/>", "");
+			console.assert(pedirNumero("a", "a") == "a;a=3<br/>aa=3<br/>", "");
+			console.assert(
+				pedirNumero("5da4", "hjsd") == "5da4;hjsd=9<br/>5da4hjsd=9<br/>",
+				""
+			);
+			console.assert(
+				pedirNumero("222", "222") == "222;222=7<br/>222222=7<br/>",
+				""
+			);
+		</script>
+	</head>
+	<body>
+		<p id="numero1"></p>
+		<button
+			onclick="document.getElementById('numero1').innerHTML+=pedirNumero(prompt('Añadir algo 1'),prompt('Añadir algo 2'))"
+		>
+			Petición
+		</button>
+	</body>
+</html>

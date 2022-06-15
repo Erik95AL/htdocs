@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Imagen y links</title>
+		<meta name="author" content="Erik Aguirre" />
+		<meta name="description" content="código curso IFCD0110" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="#" />
+		<link rel="stylesheet" href="#" />
+		<style>
+			body {
+				background-color: #848484;
+			}
+			.dropdown {
+				position: relative;
+				display: inline-block;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+
+			.desc {
+				padding: 15px;
+				text-align: center;
+			}
+			a:after {
+				content: "(" attr(href) ")";
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dropdown">
+			<img
+				src="https://www.w3schools.com/css/img_5terre.jpg"
+				alt="Cinque Terre"
+				width="300"
+				height="150"
+			/>
+			<div class="dropdown-content">
+				<img
+					src="https://www.w3schools.com/css/img_5terre.jpg"
+					alt="Cinque Terre"
+					width="600"
+					height="400"
+				/>
+				<div class="desc">Beautiful Cinque Terre</div>
+			</div>
+		</div>
+		<br />
+		<a href="https://www.w3schools.com/css/">CSS Tutorial</a><br />
+		<a href="https://www.w3schools.com/cssref/">CSS Reference</a>
+	</body>
+</html>

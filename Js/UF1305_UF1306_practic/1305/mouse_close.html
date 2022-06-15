@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Erik Aguirre Lahora" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>IFCD0110-UF1305</title>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>Mouse CLOSE</h2>
+			</div>
+			<div class="container">
+				<a href="http://www.google.com/">
+					<button>Test button href</button>
+				</a>
+				<button onclick="location.href='http://www.google.com';">
+					Test button JS location
+				</button>
+			</div>
+		</main>
+		<footer>
+			<p><b>author</b>: Erik Aguirre Lahora</p>
+			<p>
+				<a href="mailto:erik.aguirre.1995.bcn@hotmail.com"
+					>erik.aguirre.1995.bcn@hotmail.com</a
+				>
+			</p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 31/05/2022</p>
+		</footer>
+		<script>
+			window.addEventListener("beforeunload", (evento) => {
+				if (true) {
+					evento.preventDefault();
+					evento.returnValue = "";
+					return "";
+				}
+			});
+		</script>
+	</body>
+</html>

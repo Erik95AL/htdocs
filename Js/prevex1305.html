@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Prev Ex 1305</title>
+		<script defer src="./prevex1305.js"></script>
+	</head>
+	<body>
+		<form action="#" method="get" id="miForm">
+			<label>Operación</label>
+			<input type="text" id="op" onkeyup="operacion(this.value)" autofocus />
+			<label>=</label>
+			<input type="text" id="res" disabled />
+			<br />
+			<br />
+			<label>Introduce Tu nombre y apellidos</label>
+			<input type="text" id="ap" onkeyup="apellidos(this.value)" />
+			<input type="text" id="ap1" onkeyup="apellidos1(this.value)" />
+			<br />
+			<br />
+			<label>Introduce Tu código</label>
+			<input type="text" id="devToys" onkeyup="htmlDev(this.value)" />
+			<input type="text" id="salidaCodigo" onkeyup="htmlDev(this.value)" />
+			<input type="text" id="salidaFormateada" onkeyup="htmlDev(this.value)" />
+			<br />
+			<br />
+
+			<input type="submit" id="enviar" value="Enviar" disabled />
+		</form>
+	</body>
+</html>

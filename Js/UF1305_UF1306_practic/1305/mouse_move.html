@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Erik Aguirre Lahora" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>IFCD0110-UF1305</title>
+		<style>
+			#img {
+				position: absolute;
+				pointer-events: none;
+				z-index: 3;
+			}
+		</style>
+		<script>
+			function sigueCursor() {
+				corX = window.event.clientX;
+				corY = window.event.clientY;
+				img.style.left = corX + "px";
+				img.style.top = corY + "px";
+			}
+		</script>
+	</head>
+	<body onmousemove="sigueCursor()">
+		<main>
+			<img id="img" src="./descarga.jpg" width="200px" height="200px" />
+			<div class="center">
+				<h2>Mouse MOVE</h2>
+			</div>
+			<div class="container">
+				<button onclick="console.log('check:\'OK\'')">Test button</button>
+			</div>
+		</main>
+		<footer>
+			<p><b>author</b>: Erik Aguirre Lahora</p>
+			<p>
+				<a href="mailto:erik.aguirre.1995.bcn@hotmail.com"
+					>erik.aguirre.1995.bcn@hotmail.com</a
+				>
+			</p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 31/05/2022</p>
+		</footer>
+	</body>
+</html>
