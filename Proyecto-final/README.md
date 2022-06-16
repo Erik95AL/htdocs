@@ -2,57 +2,57 @@
 
 ## Explicacion previa
 
-Pos yo quiero crear una web usando ... Me gustaria realizar cosas que si y me gustaria ver un poco de ...
+Querría crear una página web utilizando tanto HTML como CSS y JS. Me gustaría implementar todo lo que he aprendido y más.
 
 ## Lluvia de ideas (sopesar las ideas y motivos de descarte) (10 minimo)
 
-- idea 1:
+- Idea 1:
   Pos era malisima
-- idea 2:
+- Idea 2:
   Aun peor que la anterior
 - Idea 3:
   XD
 - Idea 10: Banco
   Me gusta esta idea y la escojo poruqe ...
 
-# Nombre del proyecto: **Banco**
+# Nombre del proyecto: **Buscador de articulos de BMX**
 
 ## Descripcion del proyecto:
 
-Este proyecto sera un frontEnd donde se pueda ver el historico de las cuentas corrientes de los clientes y estos puedan hacer transferencias entre ellos.
+Este proyecto será un frontEnd dónde se pueda buscar piezas en concreto y su disponibilidad, así los usuarios tendrán más facilidad a la hora de encontrar piezas más concretas y en que lugar encontrarlas.
 
 ## Descripcion de las carcteristicas
 
-Pos es una web que permite ver a los usuarios su cuenta bancaria y les permite registrarse y añadir y sacar dinero a la vez que tambien les hace...
+Es una web que permite que los usuarios puedan buscar piezas en concreto y su disponibilidad, así los usuarios tendrán más facilidad a la hora de encontrar piezas más concretas y en que lugar encontrarlas.
 
 ## Viabilidad:
 
 ### Usuarios potenciales
 
+Toda la gente que practique este deporte, e incluso tiendas que quieran o necesiten algunas piezas.
 ...
 
 ### Mercado a cubrir
 
+Toda la gente que practique este deporte, e incluso tiendas que quieran o necesiten algunas piezas.
 ...
 
-### etc...
-
-...
-
-## Documentacion tecnisca
+## Documentacion técnica
 
 ### Base
 
-Se crearan 5 html y estos tendran **cargas dinamicas de otros ficheros** para importar fragmentos como el menu y...
-se usara CSS y o Boostrap para..
-Utilizare JS para...
+Se crearan 5 html y estos tendran **cargas dinamicas de otros ficheros** para importar fragmentos como el menu y otras partes de la página...
+Se utilizará CSS y o Boostrap para partes del diseño de la misma, incluso para una mejora en la usabilidad de la página.
+Utilizaré JS para conseguir un diseño algo más vistoso y así conseguir un diseño más sencillo de comprender.
 
 ### Herramientas
 
-Pos se usara Git para llevar el control de versiones, se usara la web XXX.com para tener una DB en internet 24/7, se usara Heroku para tener un servidor de php para, etc...
-Se utilizara composer para mantener las librerias actualizadas, se usara...
+Utilizaré GitHub para llevar el control de versiones, se utilizará la web ".com" para tener una DB en internet 24/7, se usara Heroku para tener un servidor de php para, etc...
+Se utilizará composer para mantener las librerias actualizadas, también se utilizará...
 
 ## Diagrama de grantt (se puede entregar fuera del md)
+
+Se vinculará el Diagrama de Grant en un archivo a parte.
 
 ## wireframes
 
@@ -64,21 +64,8 @@ Se utilizara composer para mantener las librerias actualizadas, se usara...
 
 ##Casos de uso
 
-- Registrar entrada
-  - Matrícula
-  - Fecha y hora
-  - vía
-  - Puerta usada
-- Registrar salida
-  - Matrícula
-  - Fecha y hora
-  - vía
-  - Puerta usada
-- Dar de alta vehículo oficial y del personal
-- Dar de baja vehículo oficial y del personal
-- Realizar el tique de cobro
-- Exportar Log
-  ##explicaopn de los casos de uso
+##explicación de los casos de uso
+
 - ### Caso de uso "Registra entrada"
 
   1. La cámara situada encima de la puerta (en cualquiera de los 3 accesos) realiza una fotografía al vehículo capturando la Matrícula
