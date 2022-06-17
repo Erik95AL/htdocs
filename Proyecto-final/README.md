@@ -1,7 +1,8 @@
 # Proyecto-final
 
-## Explicacion previa
+## Explicación previa
 
+adssadsadasdasdasd
 Querría crear una página web utilizando tanto HTML como CSS y JS. Me gustaría implementar todo lo que he aprendido y más.
 
 ## Lluvia de ideas (sopesar las ideas y motivos de descarte) (10 minimo)
@@ -53,6 +54,8 @@ Se utilizará composer para mantener las librerias actualizadas, también se uti
 ## Diagrama de grantt (se puede entregar fuera del md)
 
 Se vinculará el Diagrama de Grant en un archivo a parte.
+
+![mokup ](./loquesea/algo/yata.jpeg)
 
 ## wireframes
 
