@@ -2,7 +2,7 @@
 
 ## Explicación previa
 
-Querría crear una página web utilizando tanto HTML como CSS y JS. Me gustaría implementar todo lo que he aprendido y más.
+Querría crear una página web utilizando tanto HTML como CSS y JS. ¡Me gustaría implementar todo lo que he aprendido y más!
 
 ## Lluvia de ideas (sopesar las ideas y motivos de descarte) (10 minimo)
 
@@ -23,71 +23,59 @@ Este proyecto será un frontEnd dónde se pueda buscar piezas en concreto y su d
 
 ## Descripcion de las carcteristicas
 
-Es una web que permite que los usuarios puedan buscar piezas en concreto y su disponibilidad, así los usuarios tendrán más facilidad a la hora de encontrar piezas más concretas y en que lugar encontrarlas.
+Es una web que permite que los usuarios puedan buscar piezas en concreto y su disponibilidad, así los usuarios tendrán más facilidad a la hora de encontrar piezas más concretas y en que lugar encontrarlas. mas especifico
 
-## Viabilidad:
+### Usuarios potenciales (Mercado)
 
-### Usuarios potenciales
-
-Toda la gente que practique este deporte, e incluso tiendas que quieran o necesiten algunas piezas.
+Toda la gente que practique BMX, e incluso tiendas que quieran o necesiten algunas piezas. particular, profesional y comercial. rango de edades
 ...
 
 ### Mercado a cubrir
 
-Toda la gente que practique este deporte, e incluso tiendas que quieran o necesiten algunas piezas.
+Toda la gente que esté interesada en buscar o conseguir piezas, e incluso tiendas que quieran o necesiten algunas piezas. particular, profesional y comercial. rango de edades
 ...
 
-## Documentacion técnica
+# Documentacion técnica
 
-### Base
+## Base
 
-Se crearan 5 html y estos tendran **cargas dinamicas de otros ficheros** para importar fragmentos como el menu y otras partes de la página...
+Se crearan 5 html estáticas y estos tendran **cargas dinamicas de otros ficheros** para importar fragmentos como el menu y otras partes de la página...
 Se utilizará CSS y o Boostrap para partes del diseño de la misma, incluso para una mejora en la usabilidad de la página.
 Utilizaré JS para conseguir un diseño algo más vistoso y así conseguir un diseño más sencillo de comprender.
 
+`También me gustaría añadir algo de BackEnd.`
+
 ### Herramientas
 
-Utilizaré GitHub para llevar el control de versiones, se utilizará la web ".com" para tener una DB en internet 24/7, se usara Heroku para tener un servidor de php para, etc...
+Utilizaré GitHub para llevar el control de versiones, se utilizará la web "ejemplo.com" para tener una DB en internet 24/7, se usara Heroku para tener un servidor de php para, etc...
 Se utilizará composer para mantener las librerias actualizadas, también se utilizará...
+
+#### Lenguajes
 
 ## Diagrama de grantt (se puede entregar fuera del md)
 
 Se vinculará el Diagrama de Grant en un archivo a parte.
 
-![mokup ](./loquesea/algo/yata.jpeg)
+[archivos]()
 
 ## wireframes
 
-[]()
+![mokup](./loquesea/algo/yata.jpeg)
 
 ## Paths
 
 ## Mokups
 
-##Casos de uso
+## Casos de uso
 
-##explicación de los casos de uso
+-Registra nuevos usuarios
+
+### Explicación de los casos de uso
 
 - ### Caso de uso "Registra entrada"
 
-  1. La cámara situada encima de la puerta (en cualquiera de los 3 accesos) realiza una fotografía al vehículo capturando la Matrícula
-
-  2. La aplicación apunta la hora de entrada del vehículo, la vía en la que se encuentra, también apunta la puerta usada para acceder (de la 1 a la 5).
+  1.Sign in
 
 - ### Caso de uso "Registra salida"
 
-  1. La cámara situada encima de la puerta realiza una fotografía al vehículo capturando la Matrícula
-
-  2. La aplicación apunta la hora de entrada del vehículo, la vía en la que se encuentra, también apunta la puerta usada para acceder.
-
-- ### Caso de uso "Da de alta vehículo oficial"
-
-  1. El empleado elige la opción "dar de alta vehículo oficial/empleado" e introduce su número de placa.
-
-  2. La aplicación añade el vehículo a la lista de vehículos especiales
-
-- ### Caso de uso "Da de baja vehículo de oficial"
-
-  1. El empleado elige la opción "dar de baja vehículo oficial/empleado" e introduce su número de placa.
-
-  2. La aplicación añade el vehículo a la lista de vehículos especiales
+  1. Sing out
