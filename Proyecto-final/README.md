@@ -2,19 +2,18 @@
 
 ## Explicación previa
 
-adssadsadasdasdasd
 Querría crear una página web utilizando tanto HTML como CSS y JS. Me gustaría implementar todo lo que he aprendido y más.
 
 ## Lluvia de ideas (sopesar las ideas y motivos de descarte) (10 minimo)
 
 - Idea 1:
-  Pos era malisima
+  Página de ventas de vinos.
 - Idea 2:
-  Aun peor que la anterior
+  Página de ventas de piezas de bicis.
 - Idea 3:
-  XD
-- Idea 10: Banco
-  Me gusta esta idea y la escojo poruqe ...
+  Página de busqueda de piezas de bicis de BMX y compra de las mismas.
+- Idea 10: Buscador de piezas
+  ...
 
 # Nombre del proyecto: **Buscador de articulos de BMX**
 
