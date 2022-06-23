@@ -1,5 +1,5 @@
 <?php
-switch ($_POST['queHacer']) {
+switch ($_POST["queHacer"]) {
     case 1:
         peticion1();
         break;
